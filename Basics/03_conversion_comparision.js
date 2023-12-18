@@ -44,3 +44,8 @@ let b = true
 // console.log(undefined == undefined)
 // console.log(undefined === 0)
 
+
+// Maths 
+
+console.log(Math.min(2, 3, 5, 7))
+
