@@ -27,7 +27,13 @@ const a = [3, 4, 5, [2, 3, 5], [5, 6, [9, 8, 0], 0]]
 const c = [2, 4, 5]
 const d = [8, 9, 0, 7]
 
+const e = [c, d]
+const joinArrayUsingSperator = [...c, ...d]
+
+// console.log(e)
+console.log(joinArrayUsingSperator)
+
 // c.push(d)
-console.log(c.includes(9))
-console.log(c.join()) // converts into string
-console.log(c)
+// console.log(c.includes(9))
+// console.log(c.join()) // converts into string
+// console.log(c)
