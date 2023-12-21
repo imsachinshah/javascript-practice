@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Part- 4</title>
+</head>
+<body style="background-color: rgb(49, 44, 44); color: white; margin-top: 15px;">
+    <h2 style="text-align: center;">DOM Part 5</h2>
+
+    <ul class="lang">
+        <li>JavaScript</li>
+    </ul>
+</body>
+
+<script>
+    function addLang(langName){
+        const li = document.createElement('li')
+        // div.innerText = 'First Box Title'
+        const txt = document.createTextNode(langName)
+        li.appendChild(txt)
+        const ul = document.querySelector('.lang')
+        ul.appendChild(li)
+    }
+    addLang('Java')
+    addLang('Ruby')
+    addLang('React')
+    addLang('C++')
+
+    // Edit
+    const li = document.querySelector('li:nth-of-type(2)')
+    const newLi = document.createElement('li')
+    newLi.textContent = 'MongoDB'
+    li.replaceWith(newLi)
+
+    // Delete
+    const delLi = document.querySelector('li:nth-of-type(4)')
+    delLi.remove()
+
+    
+</script>
+</html>
