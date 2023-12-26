@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bubbling Propagation...</title>
+    <style>
+        body {
+            padding: 20px;
+            background-color: rgb(31, 26, 27);
+        }
+
+        div {
+            height: 300px;
+            width: 300px;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            background-color: rgb(58, 187, 58);
+            /* width: max-content; */
+        }
+
+        span {
+            display: flex;
+            justify-self: center;
+            align-self: center;
+            padding: 20px;
+            background-color: rgb(30, 30, 80);
+        }
+    </style>
+</head>
+<body>
+    <div>
+    <span>
+      <button>Click Me!</button>
+    </span>
+  </div>
+</body>
+<script>
+    const body = document.querySelector('body')
+    const div = document.querySelector('div')
+    const span = document.querySelector('span')
+    const button = document.querySelector('button')
+
+    body.addEventListener('click', function(e){
+        console.log('click inside body')
+    }, false)
+
+    div.addEventListener('click', function(e){
+        console.log('click inside div')
+    }, false)
+
+    span.addEventListener('click', function(e){
+        e.stopPropagation()
+        console.log('click inside span')
+    }, false)
+
+    button.addEventListener('click', function(e){
+        // e.stopPropagation() // it will only print this function does not prograte with bubbles
+        console.log('click inside button')
+    }, false)
+</script>
+</html>
