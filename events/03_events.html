@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setInterval and setTimeout Async API</title>
+    <style>
+        body{
+            background-color: rgb(39, 35, 35);
+        }
+        .box{
+            padding-left: 50vh;
+        }
+    </style>
+</head>
+<body>
+    <h2 style="text-align: center; color: antiquewhite;"> Async JavaScript...!</h2>
+    <div class="box">
+        <button id="stopChangingHeading">
+            Stop Change Heading
+        </button>
+        <button id="start">
+            Start
+        </button>
+        <button id="stop">
+            Stop
+        </button>
+    </div>
+</body>
+<script>
+    const printInConsole = function(){
+        console.log('Hello World');
+    }
+
+    // setTimeout(printInConsole, 3000) // call the function after 3 second
+
+    // lets see the output when calling the setTimeout at 0 second 
+    // console.log('Welcome');
+    // setTimeout(printInConsole, 0); // it will print at last as it call the asyncly through Web API
+    // console.log('to')
+
+    const randomNumber = function(){
+        console.log(Math.floor(Math.random() * 10));
+    }
+
+    let changeNum = setTimeout(randomNumber, 2000); // print randomNumber after 2 sec for 1
+    
+    clearInterval(changeNum); // it will terminate the execution of setTimeout and it will not print anything
+    // so we have to use clearInterval() at any eventListeners if we want to stop it before execution of setInterval like
+
+    const changeHeading = function(){
+        document.querySelector('h2').innerHTML = 'Hola, I have change using setInterval after 5 sec...'
+    }
+
+    let changeHead = setTimeout(changeHeading, 5000);
+
+    document.getElementById('stopChangingHeading').addEventListener('click', function(e){
+        clearTimeout(changeHead); // if we click the button before 5 sec heading change will terminate :<
+    });
+
+    const startButton = document.getElementById('start')
+    const stopButton = document.getElementById('stop')
+
+    let changeRandom;
+
+    startButton.addEventListener('click', function(){
+        changeRandom = setInterval(randomNumber, 1000) // print randomNumber every 1 sec on clicking the button
+    });
+
+    stopButton.addEventListener('click', function(e){
+        clearInterval(changeRandom); // it will stop and clear the setInterval()
+        console.log('Interval Stopped :>')
+    });
+
+</script>
+</html>
