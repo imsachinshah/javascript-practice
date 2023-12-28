@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Document Object Model</title>
+  </head>
+
+  <body>
+    <h1>Data Binding using input or change event</h1>
+
+    <input type="text" placeholder="say something" />
+    <p></p>
+
+    <button>Click Me</button>
+
+    <h1>Giving feedback using blur event</h1>
+
+    <input type="text" id="mass" placeholder="say something" />
+    <p id="p1"></p>
+
+    <script>
+        const button = document.querySelector('button')
+        button.addEventListener('onload', e => {
+        console.log('e gives the event listener object:', e)
+        console.log('e.target gives the selected element: ', e.target)
+        console.log(
+            'e.target.textContent gives content of selected element: ',
+            e.target.textContent
+        )
+        })
+        //   document.querySelector('body').addEventListener('onload', (e) => {
+        //     alert('Hello I am new here ')
+        //   })
+        const input = document.querySelector('input')
+        const p = document.querySelector('p')
+
+        input.addEventListener('input', e => {
+            p.textContent = e.target.value
+        })
+
+        const input1 = document.querySelector('#mass')
+        const p1 = document.querySelector('#p1')
+
+        input1.addEventListener('blur', (e) => {
+            p1.textContent = 'Field is required'
+            p1.style.color = 'red'
+        })
+    </script>
+  </body>
+</html>
