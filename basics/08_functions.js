@@ -58,3 +58,14 @@ function multiple(value1, value2, value3, ...last){
 
 let out = multiple(2, 3, 9, 0, 8, 0, 9, 10)
 // console.log(out)
+
+const parent = (n) => {
+    const num = n;
+    return function(num){
+        return num;
+    }
+}
+
+console.log(parent(10));
+console.log(parent()(10));
+console.log(parent(10)());
