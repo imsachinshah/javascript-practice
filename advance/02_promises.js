@@ -116,3 +116,8 @@ fetch('https://jsonplaceholder.typicode.com/users')
 });
 
 Promise.all([promiseOne, promiseThree]);
+
+const promises = [promiseOne, promiseFour];
+
+Promise.any(promises)
+.then((value) => {console.log(`value: ${value}`)});
