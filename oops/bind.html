@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bind</title>
+</head>
+<body>
+    <button>Click Me</button>
+</body>
+<script>
+    class React{
+        constructor(){
+            this.server = 'http://localhost:3000';
+            this.name = 'React';
+
+            document
+                .querySelector('button')
+                .addEventListener('click', this.clickedMe.bind(this)); // this bind the this of properties like server, name 
+        }
+
+        clickedMe(){
+            console.log('Button clicked');
+            console.log(this); // reference to button 
+            console.log(this.server); // when we not use bind then it will not get reference to the server so we use bind() to create another this reference for properties
+        }
+    }
+
+    const ob1 = new React();
+</script>
+</html>
