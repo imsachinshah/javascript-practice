@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lexical Scope and Closure</title>
+    <style>
+        body{
+            padding: 0;
+            margin: 0;
+            overflow: hidden;
+            /* font-size: rem; */
+        }
+        div{
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2em;
+        }
+        button{
+            font-size: 2rem;
+            border: 2px solid #121212;
+            border-radius: 5px;
+        }
+        h1{
+            color: white;
+            text-align: center;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body style="background-color: #121212;">
+    <h1>Change Background Color</h1>
+    <div>
+        <button id="pink">Pink</button>
+        <button id="blue">Blue</button>
+        <button id="green">Green</button>
+    </div>
+    
+</body>
+<script>
+    // Lexical Scope is accessing the the parents variables in the child functions 
+    // a function can access variables defined in its own scope, as well as variables defined in its parent or outer scopes.
+
+    // function parent(){
+    //     let name = 'Rahul Sharma';
+    //     function child(){
+    //         // here name of parent is able to accessed in child function 
+                
+    //         console.log(name);
+    //     }
+    //     child();
+    // }
+    // parent();
+
+    // only child function can access variables defined in its own scope
+
+    // function parent() {
+    //     let name = 'Hello';
+
+    //     // console.log(childName); // gives error
+
+    //     function child1() {
+    //         let childName = 'Sonu';
+    //         console.log(name, "Child 1"); 
+    //     }
+
+    //     function child2() {
+    //         // console.log(childName); // gives error 
+    //         console.log(name, 'Child 2'); 
+    //     }
+
+    //     child1();
+    //     child2();
+    // }
+
+    // parent();
+
+</script>
+
+<script>
+    // Closure - a closure gives you access to an outer function's scope from an inner function.
+
+    // function makeFunc() {
+    //     const name = "Hello";
+    //     function displayName() {
+    //         console.log(name);
+    //     }
+    //     return displayName;
+    // }
+
+    // const myFunc = makeFunc();
+    // console.log(myFunc); // return the function 
+    // myFunc(); // prints the Hello as it takes the lexical scope alog with it 
+
+</script>
+
+<script>
+    // Practical Closure 
+
+    // below code can be useful but not scalable like for 100 buttons so
+
+    // document.getElementById('pink')
+    //     .addEventListener('click', (e) => {
+    //         document.body.style.backgroundColor = 'pink';
+    //     });
+
+    // document.getElementById('blue')
+    //     .addEventListener('click', (e) => {
+    //         document.body.style.backgroundColor = 'blue';
+    //     });
+
+
+
+    // we use the closure for solving this problem 
+
+    // function changecolor(color){
+    //     document.body.style.backgroundColor = `${color}`;
+    // }
+
+    // document.getElementById('blue').addEventListener('click', changecolor('blue')) 
+
+    // it's getting automatic called and the color automatically changed  without click so for solving this problem 
+    // use changeHandler function so that we can perform our task
+
+
+
+    function changeHandler(color){
+        return function () {
+            document.body.style.backgroundColor = `${color}`;
+        }
+    }
+
+    document.getElementById('blue').addEventListener('click', changeHandler('blue')); 
+    document.getElementById('pink').addEventListener('click', changeHandler('pink')); 
+    document.getElementById('green').addEventListener('click', changeHandler('green')); 
+
+</script>
+</html>
