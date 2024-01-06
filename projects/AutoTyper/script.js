@@ -16,7 +16,7 @@ function type() {
       erase();
       return false;
     }
-    timer = setTimeout(typer, 400);
+    timer = setTimeout(typer, 200);
   };
   typer();
 }

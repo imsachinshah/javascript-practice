@@ -69,3 +69,9 @@ const parent = (n) => {
 console.log(parent(10));
 console.log(parent()(10));
 console.log(parent(10)());
+
+let funcName = function sum(a, b){
+    return a+b;
+}
+
+console.log(funcName.name)
