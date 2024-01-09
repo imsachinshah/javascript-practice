@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Storage</title>
+</head>
+<body>
+    <h2>Local Storage</h2>
+</body>
+<script>
+
+    console.log('Hello Local Storage...!')
+    // localStorage.setItem('name', 'Sachin');
+    // localStorage.setItem('age', '23');
+    
+    // let name = localStorage.getItem('name');
+    // console.log(name);
+
+    // console.log(localStorage.length);
+
+    // let first = localStorage.key(0);
+    // console.log(first);
+
+    // // localStorage.removeItem('name');
+    // localStorage.clear();
+
+
+    // JSON.stringify() and JSON.parse() we can use this to save object on local storage
+
+    const user = {
+        name: 'Ram Singh',
+        age: 23,
+        username: 'ramsingh',
+        email: 'ram@mail.com'
+    }
+
+    let data = JSON.stringify(user); // covert object to string
+    console.log(data);
+    console.log(typeof data); // string 
+
+    localStorage.setItem('user', data)
+
+    let userDataFromLocalStorage = localStorage.getItem('user');
+
+    let userData = JSON.parse(userDataFromLocalStorage); // covert string to object
+
+    console.log(userData);
+    console.log(typeof userData); // object
+
+    console.log(userData.name);
+    // localStorage.clear()
+</script>
+</html>

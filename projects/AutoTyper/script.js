@@ -6,6 +6,10 @@ const words = ['Easy', 'Fun', 'Tough', 'Interesting', 'Frustrating'];
 let i = 0;
 let timer;
 
+// async function sleep(time) {
+//   return new Promise((resolve, reject) => (setTimeout(resolve, time)));
+// }
+
 function type() {
   let word = words[i].split('');
   console.log(word);
@@ -23,6 +27,7 @@ function type() {
 
 function erase() {
   let word = words[i].split('');
+      // sleep(1000);
   let eraser = function () {
     if (word.length > 0) {
       word.pop();
