@@ -6,14 +6,76 @@
     box-sizing: border-box;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+body{
+    color: white;
+    background-color: #464444;
+}
 .wrapper{
     height: 100vh;
     width: 100vw;
     padding: 2rem;
-    /* margin: 2rem; */
-    display: grid;
-    /* grid-row: 1; */
-    grid-template-columns: auto;
+    /* position: relative; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
     background: radial-gradient(pink blue green);
     background-repeat: no-repeat;
+}
+
+.player{
+    color: black;
+    margin: 2rem;
+    text-align: center;
+    border: 2px solid black;
+    border-radius: 0.4rem;
+    background-color: rgb(209, 201, 201);
+    font-size: 1.5rem;
+}
+
+.game{
+    margin: 2rem;
+    padding: 2rem;
+    display: grid;
+    place-items: center;
+    height: 50%;
+    width: 50%;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+.box{
+    cursor: pointer;
+    height: 100%;
+    width: 100%; 
+    text-align: center;
+    font-size: 2rem;
+}
+
+.box1, .box2, .box4, .box5{
+    border-bottom: 2px solid black;
+    border-right: 2px solid black;
+}
+
+.box3, .box6{
+    border-bottom: 2px solid black;
+}
+
+.box7, .box8{
+    border-right: 2px solid black;
+}
+
+.btn{
+    border: 2px solid black;
+    border-radius: 0.4rem;
+    font-size: large;
+    display: none;
+}
+
+.active{
+    display: block;
+}
+
+.win{
+    background-color: green;
 }
