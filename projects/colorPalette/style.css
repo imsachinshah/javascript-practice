@@ -4,6 +4,7 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 body{
@@ -11,18 +12,21 @@ body{
 }
 
 h1{
+    margin-top: 2rem;
     text-align: center;
     color: rgb(221, 218, 218);
     margin-bottom: 2rem;
 }
 
 .container{
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 2%;
     color: rgb(221, 218, 218);
     height: 80vh;
-    width: 100vw;
+    width: 90%;
     border: 2px solid white;
     display: flex;
-    margin-bottom: 2rem;
     /* justify-content: center; */
 }
 
@@ -30,14 +34,42 @@ h1{
     height: 100%;
     width: 20%;
 }
+#color1{
+    background-color: rgb(199, 42, 12);
+}
+#color2{
+    background-color: rgb(217, 218, 165);
+}
+#color3{
+    background-color: rgb(120, 135, 112);
+}
+#color4{
+    background-color: rgb(91, 125, 108);
+}
+#color5{
+    background-color: rgb(110, 145, 85);
+}
+
 .foot{
-    padding-left: 50%;
+    /* padding-left: 50%; */
+    display: flex;
+    justify-content: center;
 }
 
 button{
-    padding: 0.2rem;
+    padding: 0.3rem;
     color: black;
-    text-decoration: solid;
+    font-size: 1rem;
+    box-shadow: none;
+    /* text-decoration: solid; */
     border-radius: 0.5rem;
     cursor: pointer;
+}
+
+.colorCode{
+    color: black;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 500;
+    padding-top: 60vh;
 }
