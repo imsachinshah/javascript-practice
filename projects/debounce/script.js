@@ -32,7 +32,7 @@ const getUserData = async () => {
   setData(data.results[0]);
 }
 
-// debouncing 
+// debouncing - https://dev.to/jeetvora331/javascript-debounce-easiest-explanation--29hc
 
 const debounce = (mainFunc, delay) => {
     let timer; 
